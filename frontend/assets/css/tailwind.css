@@ -10,3 +10,9 @@
 body{
     background-color: #1E1E20;
 }
+
+.img-bg{
+    background-image: url('../images/gradient.png');
+    background-position: center;
+    background-size: cover;
+}
