@@ -12,7 +12,7 @@
                     <img src="~/assets/images/rust_logo.jpg" alt="Rust Cobal Scientist" width="300">
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-6">
+            <div class="grid grid-cols-2 gap-6 mb-6">
                 <div class="bg-light-gray p-6 rounded-lg">
                     <Icon name="el:idea" class="p-3 text-[50px] rounded-md bg-dark text-white mb-2"  />
                     <h2 class="text-gray-200 text-2xl mb-2 font-semibold">Open Source</h2>
@@ -26,6 +26,13 @@
             </div>
             <div class="py-6">
                 <h2 class="text-3xl text-white font-semibold my-3">How to make it work?</h2>
+                <div class="text-gray-200">
+                    <p class="mb-4 leading-8">RustyGuard is a powerful Discord bot that has been designed specifically to provide support for Rust servers. Its primary function is to respond to user commands that have been set up in advance, providing players with helpful information, support, and guidance as they play the game.</p>
+                    <p class="mb-4 leading-8">With RustyGuard, players can easily interact with the bot using simple commands, which will trigger an automated response that provides them with the information they need. Whether it's finding out more about the game's mechanics, troubleshooting issues, or simply getting some tips and tricks, RustyGuard is always on hand to help.</p>
+                    <p class="mb-4 leading-8">One of the key benefits of RustyGuard is its versatility. It can be customized to suit the needs of your particular Rust server, with commands and responses that are tailored to your specific requirements. Whether you're running a small private server or a large public one, RustyGuard can be configured to provide the support that your players need.</p>
+                    <p class="mb-4 leading-8">Overall, RustyGuard is an invaluable tool for anyone running a Rust server, providing players with fast, reliable, and accurate support whenever they need it. With its user-friendly interface, customizable features, and powerful automation capabilities, RustyGuard is the ultimate support bot for Rust servers.</p>
+                </div>
+
             </div>
         </div>
     </section>
