@@ -8,6 +8,23 @@ module.exports = {
       "./nuxt.config.{js,ts}",
     ],
     theme: {
+      screens: {
+        "710px": {
+          "max": "710px"
+        },
+        "570px": {
+          "max": "570px"
+        },
+        "500px": {
+          "max": "500px"
+        },
+        "410px": {
+          "max": "410px"
+        },
+        "380px": {
+          "max": "380px"
+        }
+      },
       extend: {
         colors: {
           "dark": "#1E1E20",
