@@ -11,5 +11,8 @@
     "@nuxtjs/tailwindcss": "^6.4.1",
     "nuxt": "^3.2.2",
     "nuxt-icon": "^0.3.2"
+  },
+  "dependencies": {
+    "pocketbase": "^0.12.0"
   }
 }

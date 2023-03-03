@@ -33,7 +33,6 @@
                     <p class="mb-4 leading-8">Overall, RustyGuard is an invaluable tool for anyone running a Rust server, providing players with fast, reliable, and accurate support whenever they need it. With its user-friendly interface, customizable features, and powerful automation capabilities, RustyGuard is the ultimate support bot for Rust servers.</p>
                 </div>
             </div>
-            <Footer />
         </div>
     </section>
 </template>

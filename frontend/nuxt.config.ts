@@ -11,5 +11,11 @@ export default defineNuxtConfig({
                 { name: "description", content: "Join Rust support bot for your rust server!" }
             ]
         }
-    }
+    },
+    runtimeConfig: {
+        pocketbaseURL: "http://127.0.0.1:8090",
+        public: {
+            pocketbaseURL: "http://127.0.0.1:8090"
+        }
+    },
 });
