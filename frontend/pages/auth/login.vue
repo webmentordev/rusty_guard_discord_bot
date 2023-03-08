@@ -6,7 +6,7 @@
             <input type="email" v-model="email" class="bg-dark text-gray-200 py-4 p-3 rounded-md w-full mb-3" placeholder="Email Address">
             <input type="password" v-model="password" class="bg-dark text-gray-200 py-4 p-3 rounded-md w-full mb-3" placeholder="Password">
             <button type="submit" class="inlline-block py-3 px-6 bg-main text-white rounded-md">Login</button>
-            <p class="text-center text-gray-100">Do not have an account? <NuxtLink to="/auth/signup" class="underline text-main">create account</NuxtLink></p>
+            <p class="text-center text-gray-100">Do not have an account? <NuxtLink to="/auth/signup" class="underline text-main">Create account</NuxtLink></p>
         </form>
     </header>
 </template>
@@ -23,17 +23,20 @@
     const config = useRuntimeConfig();
     const pb = new PocketBase(config.public.pocketbaseURL);
 
+    useHead({
+        title: "Login Account | RustyGuard"
+    })
+
     onMounted(() => {
         if(pb.authStore.model != null){
             router.push('/dashboard')
         }
     });
-
-    async function loginHandler() {
+    function loginHandler() {
         if(email.value !== "" && password.value !== ""){
-            await pb.collection('users').authWithPassword(email.value, password.value).then(() => {
+            pb.collection('users').authWithPassword(email.value, password.value).then(() => {
                 router.push('/dashboard');
-            });
+            }).catch(() => failed.value = "Email or password doesn't match!");
         }else{
             failed.value = "Email or Password are missing!"
         }
