@@ -8,7 +8,7 @@
         </div>
 
         <div class="flex">
-            <div class="max-w-[25%] w-full mr-6 p-4 rounded-lg bg-light-gray">
+            <div class="max-w-[25%] w-full mr-6 p-4 rounded-lg bg-light-gray h-fit">
                 <h2 class="mb-2 text-white font-semibold border-b text-2xl border-gray-600 pb-3">Navigation</h2>
                 <ul>
                     <li><button class="text-white py-2 hover:text-main" @click="tab = 'servers'">Servers</button></li>
@@ -39,9 +39,8 @@
     onMounted(() => {
         if(pb.authStore.model == null){
             router.push('/auth/login');
-        }else{
-            username.value = pb.authStore.model.username;
         }
+        username.value = pb.authStore.model.username;
     })
     const logoutHandler = () => {
         pb.authStore.clear();
