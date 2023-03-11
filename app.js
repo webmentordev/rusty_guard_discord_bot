@@ -5,6 +5,7 @@ const apiURL  = process.env.POCKETBASE_IP;
 
 const client = new Client({ intents: [
     GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildIntegrations,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent

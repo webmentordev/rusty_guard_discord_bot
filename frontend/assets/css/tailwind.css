@@ -16,3 +16,7 @@ body{
     background-position: center;
     background-size: cover;
 }
+
+.table tr:last-child{
+    border: none;
+}
