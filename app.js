@@ -5,8 +5,6 @@ const apiURL  = process.env.POCKETBASE_IP;
 
 const client = new Client({ intents: [
     GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildIntegrations,
-    GatewayIntentBits.GuildMessages,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent
 ] });
@@ -19,23 +17,31 @@ client.once('ready', (bot) => {
 
 client.on('messageCreate', async (message) => {
     if(message.author.bot == true) return;
-    const response = await fetch(`${apiURL}/api/collections/servers/records?filter=(guild_id='${message.guildId}')&expand=commands(server)`);
-    const result = await response.json();
-    let universalCommands = "All Commands for this server: ";
-    const arrayResult = result.items[0].expand['commands(server)'];
-    if(message.content == "!commands"){
-        for(let i = 0; i < arrayResult.length; i++){
-            universalCommands += "\n"+arrayResult[i].command;
-        }
-        message.reply(universalCommands);
-        return;
-    }
-    for(let i = 0; i < arrayResult.length; i++){
-        if(arrayResult[i].command === message.content){
-            message.reply(arrayResult[i].message);
+    fetch(`${apiURL}/api/collections/servers/records?filter=(guild_id='${message.guildId}')&expand=commands(server)`).then((response) => response.json()).then((result) => result.items[0]).then((array) => {
+        if('expand' in array){
+            let universalCommands = "All Commands for this server: ";
+            const arrayResult = array.expand['commands(server)'];
+            if(message.content == "!commands"){
+                arrayResult.forEach((item) => {
+                    universalCommands += "\n"+item.command;
+                })
+                message.reply(universalCommands);
+                return;
+            }
+            arrayResult.forEach((item) => {
+                if(item.command == message.content){
+                    message.reply(item.message);
+                    return;
+                }
+            })
+        }else{
+            message.reply("Commands are not setup for the server!");
             return;
         }
-    }
+    })
+    .catch((error) => {
+        console.log(error)
+    })
 });
 
 client.login(token);
