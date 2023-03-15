@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-5xl m-auto py-8 px-4 ">
+    <div class="max-w-6xl m-auto py-8 px-4 ">
         <div class="flex items-center justify-between p-4 rounded-lg bg-light-gray mb-6">
             <h1 class="text-white text-2xl font-semibold">Welcome <span>{{ username }}</span>! 👋</h1>
             <form @submit.prevent="logoutHandler">

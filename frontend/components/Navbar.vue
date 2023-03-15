@@ -1,6 +1,6 @@
 <template>
     <nav class="py-3 w-full">
-        <div class="flex items-center justify-between max-w-5xl m-auto px-4">
+        <div class="flex items-center justify-between max-w-6xl m-auto px-4">
             <NuxtLink to="/" class="items-center flex">
                 <img src="~/assets/images/logo.png" alt="Rust Cobal Scientist" width="50" class="rounded-full">
                 <span class="text-xl font-semibold text-light ml-4 500px:hidden">RustyGuard</span>

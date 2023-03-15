@@ -1,5 +1,5 @@
 <template>
-    <div class="px-2">
+    <div class="px-2 text-sm">
         <h2 class="mb-2 text-white text-lg font-semibold">Servers Configuration</h2>
         <p v-if="failed" class="text-red-600 mb-2">{{ failed }}</p>
         <p v-if="success" class="text-green-600 mb-2">{{ success }}</p>

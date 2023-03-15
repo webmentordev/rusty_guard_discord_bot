@@ -38,8 +38,7 @@ client.on('messageCreate', async (message) => {
             message.reply("Commands are not setup for the server!");
             return;
         }
-    })
-    .catch((error) => {
+    }).catch((error) => {
         console.log(error)
     })
 });
