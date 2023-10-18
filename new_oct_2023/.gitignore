@@ -1,0 +1,5 @@
+.env
+/node_modules
+/files/slur.js
+/files/help.js
+/files/data.txt
